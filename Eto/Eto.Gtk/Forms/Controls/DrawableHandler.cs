@@ -56,8 +56,14 @@ namespace Eto.GtkSharp.Forms.Controls
 			return new DrawableConnector();
 		}
 
+
 		protected class DrawableConnector : GtkPanelEventConnector
 		{
+			/// <summary>
+			/// get the pango context once, not each time we draw..
+			/// </summary>
+			private Pango.Context Pcontext = null;
+
 			public new DrawableHandler Handler { get { return (DrawableHandler)base.Handler; } }
 
 			public void HandleDrawableButtonPressEvent(object o, Gtk.ButtonPressEventArgs args)
@@ -79,6 +85,8 @@ namespace Eto.GtkSharp.Forms.Controls
 					h.Callback.OnPaint(h.Widget, new PaintEventArgs(graphics, rect));
 				}
 			}
+
+			
 #else
 			[GLib.ConnectBefore]
 			public void HandleDrawn(object o, Gtk.DrawnArgs args)
@@ -102,16 +110,15 @@ namespace Eto.GtkSharp.Forms.Controls
 				}
 
 #else
-				
-				var pango = h.Control.CreatePangoContext())
-				{
-					using (var graphics = new Graphics(new GraphicsHandler(args.Cr, pango, false)))
-					{
-						if (h.SelectedBackgroundColor != null)
-							graphics.Clear(h.SelectedBackgroundColor.Value);
+				// only get the pango context once, using a context owned by the widget
+				if (Pcontext == null) h.Control.GetPangoContext();
 
-						h.Callback.OnPaint(h.Widget, new PaintEventArgs(graphics, rect.ToEto()));
-					}
+				using (var graphics = new Graphics(new GraphicsHandler(args.Cr, Pcontext, false)))
+				{
+					if (h.SelectedBackgroundColor != null)
+						graphics.Clear(h.SelectedBackgroundColor.Value);
+
+					h.Callback.OnPaint(h.Widget, new PaintEventArgs(graphics, rect.ToEto()));
 				}
 #endif
 			}
