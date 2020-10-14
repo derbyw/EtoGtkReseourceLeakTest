@@ -1,0 +1,140 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Samples/1.0.0": {
+        "dependencies": {
+          "AtkSharp": "1.0.0",
+          "CairoSharp": "1.0.0",
+          "GLibSharp": "1.0.0",
+          "GdkSharp": "1.0.0",
+          "GioSharp": "1.0.0",
+          "GtkSharp": "1.0.0",
+          "GtkSourceSharp": "1.0.0",
+          "PangoSharp": "1.0.0"
+        },
+        "runtime": {
+          "Samples.dll": {}
+        }
+      },
+      "AtkSharp/1.0.0": {
+        "dependencies": {
+          "GLibSharp": "1.0.0"
+        },
+        "runtime": {
+          "AtkSharp.dll": {}
+        }
+      },
+      "CairoSharp/1.0.0": {
+        "runtime": {
+          "CairoSharp.dll": {}
+        }
+      },
+      "GdkSharp/1.0.0": {
+        "dependencies": {
+          "CairoSharp": "1.0.0",
+          "GLibSharp": "1.0.0",
+          "GioSharp": "1.0.0",
+          "PangoSharp": "1.0.0"
+        },
+        "runtime": {
+          "GdkSharp.dll": {}
+        }
+      },
+      "GioSharp/1.0.0": {
+        "dependencies": {
+          "GLibSharp": "1.0.0"
+        },
+        "runtime": {
+          "GioSharp.dll": {}
+        }
+      },
+      "GLibSharp/1.0.0": {
+        "runtime": {
+          "GLibSharp.dll": {}
+        }
+      },
+      "GtkSharp/1.0.0": {
+        "dependencies": {
+          "AtkSharp": "1.0.0",
+          "CairoSharp": "1.0.0",
+          "GLibSharp": "1.0.0",
+          "GdkSharp": "1.0.0",
+          "GioSharp": "1.0.0",
+          "PangoSharp": "1.0.0"
+        },
+        "runtime": {
+          "GtkSharp.dll": {}
+        }
+      },
+      "GtkSourceSharp/1.0.0": {
+        "dependencies": {
+          "GtkSharp": "1.0.0"
+        },
+        "runtime": {
+          "GtkSourceSharp.dll": {}
+        }
+      },
+      "PangoSharp/1.0.0": {
+        "dependencies": {
+          "CairoSharp": "1.0.0",
+          "GLibSharp": "1.0.0"
+        },
+        "runtime": {
+          "PangoSharp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Samples/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AtkSharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CairoSharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GdkSharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GioSharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GLibSharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GtkSharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GtkSourceSharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PangoSharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

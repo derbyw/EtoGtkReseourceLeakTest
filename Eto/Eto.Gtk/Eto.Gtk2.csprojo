@@ -1,0 +1,97 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net45</TargetFrameworks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <RootNamespace>Eto.GtkSharp</RootNamespace>
+    <DefineConstants>$(DefineConstants);CAIRO;GTK2</DefineConstants>
+    <TreatWarningsAsErrors Condition="$(Configuration) == 'Release'">true</TreatWarningsAsErrors>
+    <FixGtkReferences Condition="$(FixGtkReferences)==''">true</FixGtkReferences>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <PackageId>Eto.Platform.Gtk2</PackageId>
+    <Title>Eto.Forms - GTK#2 Platform</Title>
+    <Description>GTK#2 Platform for the Eto.Forms UI Framework</Description>
+    <PackageTags>cross platform gui ui framework desktop gtk eto.forms</PackageTags>
+    <PackageDescription>
+This package is deprecated and should not be used in new projects, please use Eto.Platform.Gtk instead.
+
+This is the GTK2 platform for Eto.Forms UI Framework.
+
+Include this along with your Eto.Forms application to provide a GTK2 interface, typically for Linux users.
+
+You do not need to use any of the classes of this assembly (unless customizing the GTK functionality of the platform), and should just use the UI controls from the Eto assembly.
+
+On Linux, mono-complete 5.10 or higher and gtk-sharp2 packages are required.
+    </PackageDescription>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Cairo" Pack="False" />
+    <Reference Include="..\..\lib\webkit-sharp\webkit-sharp.dll" Private="False" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <PackageVersion>2.0</PackageVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <PackageVersion>2.0</PackageVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <PackageVersion>2.0</PackageVersion>
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <PackageVersion>2.0</PackageVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <PackageVersion>2.0</PackageVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Shared\Conversions.cs">
+      <Link>Conversions.cs</Link>
+    </Compile>
+    <Compile Include="..\Eto.Mac\Drawing\SplineHelper.cs">
+      <Link>Drawing\SplineHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\PlatformDetect.cs">
+      <Link>PlatformDetect.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\FixedMaskedTextProviderHandler.cs">
+      <Link>Forms\FixedMaskedTextProviderHandler.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\BaseBitmapData.cs">
+      <Link>Drawing\BaseBitmapData.cs</Link>
+    </Compile>
+    <Compile Include="..\Shared\GradientHelper.cs">
+      <Link>GradientHelper.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eto\Eto.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="NativeMethods.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NativeMethods.cs</LastGenOutput>
+    </None>
+    <None Update="Forms\EtoControls.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EtoControls.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="NativeMethods.cs">
+      <DependentUpon>NativeMethods.tt</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Forms\EtoControls.cs">
+      <DependentUpon>EtoControls.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

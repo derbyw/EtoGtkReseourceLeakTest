@@ -11,11 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Eto\Eto.Gtk\Eto.Gtk.csproj" />
     <ProjectReference Include="..\GtkLeakageTest\GtkLeakageTest.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Eto.Platform.Gtk" Version="2.5.6" />
   </ItemGroup>
 	
 </Project>
