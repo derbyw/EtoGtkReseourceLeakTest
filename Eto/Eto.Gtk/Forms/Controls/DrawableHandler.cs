@@ -113,8 +113,8 @@ namespace Eto.GtkSharp.Forms.Controls
 				//CreatePangoContext  - creates a new one each time. local owned
 				//GetPangoContext - gets a context owned by the control
 				// only get the pango context once, using a context owned by the widget
-				if (Pcontext == null) h.Control.GetPangoContext();
-
+				if (Pcontext == null) Pcontext = h.Control.GetPangoContext();
+				
 				using (var graphics = new Graphics(new GraphicsHandler(args.Cr, Pcontext, false)))
 				{
 					if (h.SelectedBackgroundColor != null)
