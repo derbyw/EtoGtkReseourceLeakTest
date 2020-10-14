@@ -6727,6 +6727,12 @@ namespace Gtk {
 			Pango.Context ret = GLib.Object.GetObject(raw_ret) as Pango.Context;
 			return ret;
 		}
+		
+		public Pango.Context GetPangoContext() {
+			IntPtr raw_ret = gtk_widget_get_pango_context(Handle);
+			Pango.Context ret = GLib.Object.GetObject(raw_ret) as Pango.Context;
+			return ret;
+		}
 
 		[UnmanagedFunctionPointer (CallingConvention.Cdecl)]
 		delegate IntPtr d_gtk_widget_create_pango_layout(IntPtr raw, IntPtr text);

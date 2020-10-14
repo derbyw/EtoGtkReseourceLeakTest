@@ -26,13 +26,13 @@ When building for the full framework, .NET Framework 4.6.1 or mono framework 5.1
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="all" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\GtkSharp\Source\Libs\AtkSharp\AtkSharp.csproj" />
-    <ProjectReference Include="..\..\..\GtkSharp\Source\Libs\CairoSharp\CairoSharp.csproj" />
-    <ProjectReference Include="..\..\..\GtkSharp\Source\Libs\GdkSharp\GdkSharp.csproj" />
-    <ProjectReference Include="..\..\..\GtkSharp\Source\Libs\GioSharp\GioSharp.csproj" />
-    <ProjectReference Include="..\..\..\GtkSharp\Source\Libs\GLibSharp\GLibSharp.csproj" />
-    <ProjectReference Include="..\..\..\GtkSharp\Source\Libs\GtkSharp\GtkSharp.csproj" />
-    <ProjectReference Include="..\..\..\GtkSharp\Source\Libs\PangoSharp\PangoSharp.csproj" />
+    <ProjectReference Include="..\..\GtkSharp\Source\Libs\AtkSharp\AtkSharp.csproj" />
+    <ProjectReference Include="..\..\GtkSharp\Source\Libs\CairoSharp\CairoSharp.csproj" />
+    <ProjectReference Include="..\..\GtkSharp\Source\Libs\GdkSharp\GdkSharp.csproj" />
+    <ProjectReference Include="..\..\GtkSharp\Source\Libs\GioSharp\GioSharp.csproj" />
+    <ProjectReference Include="..\..\GtkSharp\Source\Libs\GLibSharp\GLibSharp.csproj" />
+    <ProjectReference Include="..\..\GtkSharp\Source\Libs\GtkSharp\GtkSharp.csproj" />
+    <ProjectReference Include="..\..\GtkSharp\Source\Libs\PangoSharp\PangoSharp.csproj" />
     <ProjectReference Include="..\Eto\Eto.csproj" />
   </ItemGroup>
   <ItemGroup>
